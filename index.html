@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AIFind — Find Your Perfect AI Tool</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #080810;
@@ -16,9 +17,7 @@
     --muted: #7070a0;
     --glow: rgba(123,94,248,0.25);
   }
-
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   body {
     background: var(--bg);
     color: var(--text);
@@ -26,8 +25,6 @@
     min-height: 100vh;
     overflow-x: hidden;
   }
-
-  /* Animated background */
   body::before {
     content: '';
     position: fixed;
@@ -38,390 +35,70 @@
     pointer-events: none;
     z-index: 0;
   }
-
-  .noise {
-    position: fixed;
-    inset: 0;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .container {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 24px;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* Header */
-  header {
-    padding: 40px 0 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 1.4rem;
-    letter-spacing: -0.5px;
-  }
-
-  .logo span {
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .badge {
-    font-size: 0.72rem;
-    font-weight: 500;
-    color: var(--muted);
-    border: 1px solid var(--border);
-    padding: 5px 12px;
-    border-radius: 100px;
-    letter-spacing: 0.5px;
-  }
-
-  /* Hero */
-  .hero {
-    padding: 80px 0 50px;
-    text-align: center;
-  }
-
-  .hero h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(2.4rem, 6vw, 4rem);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -1.5px;
-    margin-bottom: 18px;
-    animation: fadeUp 0.7s ease both;
-  }
-
-  .hero h1 em {
-    font-style: normal;
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .hero p {
-    color: var(--muted);
-    font-size: 1.1rem;
-    font-weight: 300;
-    max-width: 480px;
-    margin: 0 auto 50px;
-    line-height: 1.6;
-    animation: fadeUp 0.7s 0.1s ease both;
-  }
-
-  /* Search box */
-  .search-wrap {
-    animation: fadeUp 0.7s 0.2s ease both;
-    position: relative;
-    max-width: 680px;
-    margin: 0 auto;
-  }
-
-  .search-box {
-    width: 100%;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 22px 160px 22px 24px;
-    font-size: 1rem;
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 400;
-    outline: none;
-    resize: none;
-    min-height: 70px;
-    max-height: 160px;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    line-height: 1.5;
-  }
-
+  .container { max-width: 860px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+  header { padding: 40px 0 0; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.4rem; letter-spacing: -0.5px; }
+  .logo span { background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .badge { font-size: 0.72rem; font-weight: 500; color: var(--muted); border: 1px solid var(--border); padding: 5px 12px; border-radius: 100px; }
+  .hero { padding: 80px 0 50px; text-align: center; }
+  .hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 18px; animation: fadeUp 0.7s ease both; }
+  .hero h1 em { font-style: normal; background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero p { color: var(--muted); font-size: 1.1rem; font-weight: 300; max-width: 480px; margin: 0 auto 50px; line-height: 1.6; animation: fadeUp 0.7s 0.1s ease both; }
+  .search-wrap { animation: fadeUp 0.7s 0.2s ease both; position: relative; max-width: 680px; margin: 0 auto; }
+  .search-box { width: 100%; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 22px 160px 22px 24px; font-size: 1rem; color: var(--text); font-family: 'DM Sans', sans-serif; outline: none; resize: none; min-height: 70px; max-height: 160px; transition: border-color 0.2s, box-shadow 0.2s; line-height: 1.5; }
   .search-box::placeholder { color: var(--muted); }
-
-  .search-box:focus {
-    border-color: rgba(123,94,248,0.5);
-    box-shadow: 0 0 0 3px var(--glow), 0 20px 60px rgba(0,0,0,0.4);
-  }
-
-  .search-btn {
-    position: absolute;
-    right: 12px;
-    bottom: 12px;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    border: none;
-    border-radius: 12px;
-    padding: 12px 22px;
-    color: white;
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: opacity 0.2s, transform 0.15s;
-    letter-spacing: 0.3px;
-    white-space: nowrap;
-  }
-
+  .search-box:focus { border-color: rgba(123,94,248,0.5); box-shadow: 0 0 0 3px var(--glow), 0 20px 60px rgba(0,0,0,0.4); }
+  .search-btn { position: absolute; right: 12px; bottom: 12px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border: none; border-radius: 12px; padding: 12px 22px; color: white; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: opacity 0.2s, transform 0.15s; }
   .search-btn:hover { opacity: 0.9; transform: translateY(-1px); }
-  .search-btn:active { transform: translateY(0); }
   .search-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-
-  /* Example chips */
-  .examples {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-    margin-top: 18px;
-    animation: fadeUp 0.7s 0.3s ease both;
-  }
-
-  .chip {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    padding: 7px 16px;
-    font-size: 0.82rem;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.2s;
-    white-space: nowrap;
-  }
-
-  .chip:hover {
-    background: rgba(123,94,248,0.12);
-    border-color: rgba(123,94,248,0.3);
-    color: var(--text);
-  }
-
-  /* Results */
-  .results {
-    margin: 50px 0 80px;
-    animation: fadeUp 0.5s ease both;
-  }
-
-  .results-label {
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--muted);
-    margin-bottom: 20px;
-    font-weight: 500;
-  }
-
-  /* AI response area */
-  .ai-response {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 32px;
-    margin-bottom: 24px;
-    line-height: 1.75;
-    font-size: 0.97rem;
-    color: #c8c8e8;
-  }
-
-  .ai-response h3 {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--text);
-    margin: 20px 0 8px;
-  }
-
-  .ai-response h3:first-child { margin-top: 0; }
-
-  .ai-response p { margin-bottom: 12px; }
-
-  .ai-response strong {
-    color: var(--text);
-    font-weight: 600;
-  }
-
-  .ai-response a {
-    color: #a78bfa;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(167,139,250,0.3);
-    transition: border-color 0.2s;
-  }
-
-  .ai-response a:hover { border-color: #a78bfa; }
-
-  /* Tool cards */
-  .tool-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 14px;
-  }
-
-  .tool-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 22px;
-    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-    cursor: pointer;
-    text-decoration: none;
-    display: block;
-  }
-
-  .tool-card:hover {
-    border-color: rgba(123,94,248,0.4);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(123,94,248,0.1);
-  }
-
-  .tool-card-icon {
-    width: 42px;
-    height: 42px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    margin-bottom: 14px;
-  }
-
-  .tool-card-name {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    margin-bottom: 6px;
-    color: var(--text);
-  }
-
-  .tool-card-desc {
-    font-size: 0.83rem;
-    color: var(--muted);
-    line-height: 1.5;
-    margin-bottom: 14px;
-  }
-
-  .tool-card-tag {
-    display: inline-block;
-    font-size: 0.72rem;
-    padding: 3px 10px;
-    border-radius: 100px;
-    background: rgba(123,94,248,0.12);
-    color: #a78bfa;
-    font-weight: 500;
-  }
-
-  /* Loading */
-  .loading {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    color: var(--muted);
-    font-size: 0.9rem;
-    padding: 30px 0;
-  }
-
-  .dots {
-    display: flex;
-    gap: 5px;
-  }
-
-  .dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--accent);
-    animation: bounce 1.2s infinite ease-in-out;
-  }
-
+  .examples { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 18px; animation: fadeUp 0.7s 0.3s ease both; }
+  .chip { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 100px; padding: 7px 16px; font-size: 0.82rem; color: var(--muted); cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+  .chip:hover { background: rgba(123,94,248,0.12); border-color: rgba(123,94,248,0.3); color: var(--text); }
+  .stats { display: flex; gap: 40px; justify-content: center; padding: 30px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin: 0 0 60px; animation: fadeUp 0.7s 0.4s ease both; }
+  .stat-item { text-align: center; }
+  .stat-num { font-family: 'Syne', sans-serif; font-size: 1.6rem; font-weight: 800; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 3px; }
+  .results { margin: 50px 0 80px; animation: fadeUp 0.5s ease both; }
+  .results-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 20px; font-weight: 500; }
+  .summary-box { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px 28px; margin-bottom: 20px; color: #c8c8e8; font-size: 0.97rem; line-height: 1.7; }
+  .tool-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+  .tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; text-decoration: none; display: block; }
+  .tool-card:hover { border-color: rgba(123,94,248,0.4); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+  .tool-icon { width: 42px; height: 42px; border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--accent2)); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 14px; }
+  .tool-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 6px; color: var(--text); }
+  .tool-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.5; margin-bottom: 14px; }
+  .tool-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag { display: inline-block; font-size: 0.72rem; padding: 3px 10px; border-radius: 100px; background: rgba(123,94,248,0.12); color: #a78bfa; font-weight: 500; }
+  .tag.free { background: rgba(94,248,159,0.1); color: #5ef89f; }
+  .tag.paid { background: rgba(248,94,159,0.1); color: #f85e9f; }
+  .loading { display: flex; align-items: center; gap: 14px; color: var(--muted); font-size: 0.9rem; padding: 30px 0; }
+  .dots { display: flex; gap: 5px; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: bounce 1.2s infinite ease-in-out; }
   .dot:nth-child(2) { animation-delay: 0.2s; }
   .dot:nth-child(3) { animation-delay: 0.4s; }
-
-  @keyframes bounce {
-    0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
-    40% { transform: scale(1); opacity: 1; }
-  }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* Divider */
-  .divider {
-    height: 1px;
-    background: var(--border);
-    margin: 40px 0;
-  }
-
-  /* Stats bar */
-  .stats {
-    display: flex;
-    gap: 40px;
-    justify-content: center;
-    padding: 30px 0;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    margin: 0 0 60px;
-    animation: fadeUp 0.7s 0.4s ease both;
-  }
-
-  .stat-item { text-align: center; }
-
-  .stat-num {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .stat-label {
-    font-size: 0.78rem;
-    color: var(--muted);
-    margin-top: 3px;
-  }
-
+  @keyframes bounce { 0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; } 40% { transform: scale(1); opacity: 1; } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   @media (max-width: 600px) {
     .hero { padding: 50px 0 40px; }
     .stats { gap: 20px; }
-    .search-box { padding: 18px 130px 60px 18px; }
+    .search-box { padding: 18px 18px 60px; }
     .search-btn { bottom: 10px; right: 10px; }
   }
 </style>
 </head>
 <body>
-<div class="noise"></div>
-
 <div class="container">
   <header>
     <div class="logo">AI<span>Find</span></div>
     <div class="badge">500+ AI Tools Indexed</div>
   </header>
-
   <section class="hero">
     <h1>Find the <em>perfect AI</em><br>for anything you need</h1>
     <p>Describe what you're trying to do in plain language. We'll find the best AI tools instantly.</p>
-
     <div class="search-wrap">
-      <textarea 
-        class="search-box" 
-        id="searchInput"
-        placeholder="e.g. I need to edit my videos automatically..."
-        rows="1"
-      ></textarea>
-      <button class="search-btn" id="searchBtn" onclick="findAI()">
-        Find AI →
-      </button>
+      <textarea class="search-box" id="searchInput" placeholder="e.g. I need to edit my videos automatically..." rows="1"></textarea>
+      <button class="search-btn" id="searchBtn" onclick="findAI()">Find AI →</button>
     </div>
-
     <div class="examples">
       <span class="chip" onclick="setQuery('Best AI for Excel and spreadsheets')">📊 Excel & spreadsheets</span>
       <span class="chip" onclick="setQuery('AI to edit and create videos')">🎬 Video editing</span>
@@ -431,156 +108,142 @@
       <span class="chip" onclick="setQuery('AI for studying and learning faster')">📚 Studying</span>
     </div>
   </section>
-
   <div class="stats">
-    <div class="stat-item">
-      <div class="stat-num">500+</div>
-      <div class="stat-label">AI Tools</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">50+</div>
-      <div class="stat-label">Categories</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">Free</div>
-      <div class="stat-label">Always</div>
-    </div>
+    <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">AI Tools</div></div>
+    <div class="stat-item"><div class="stat-num">50+</div><div class="stat-label">Categories</div></div>
+    <div class="stat-item"><div class="stat-num">Free</div><div class="stat-label">Always</div></div>
   </div>
-
   <div id="resultsArea"></div>
 </div>
-
 <script>
-  const searchInput = document.getElementById('searchInput');
+const DB = {
+  excel: { summary: "For Excel and spreadsheets, these AI tools will save you hours of work every week.", tools: [
+    { name: "Microsoft Copilot", emoji: "📊", desc: "Built directly into Excel. Write formulas, analyze data, and create charts just by describing what you want in plain English.", url: "https://copilot.microsoft.com", tag: "Spreadsheets", free: false },
+    { name: "ChatGPT", emoji: "🤖", desc: "Paste your data or describe your problem and get instant Excel formulas, VBA scripts, and step-by-step data analysis help.", url: "https://chat.openai.com", tag: "General AI", free: true },
+    { name: "Formula Bot", emoji: "⚡", desc: "Converts plain English into Excel and Google Sheets formulas instantly. Perfect for complex formulas you can't figure out.", url: "https://formulabot.com", tag: "Formulas", free: true }
+  ]},
+  video: { summary: "These AI tools handle video editing, generation, and enhancement automatically — no experience needed.", tools: [
+    { name: "CapCut AI", emoji: "🎬", desc: "The most popular AI video editor. Auto-captions, smart cut, background removal — all free and extremely powerful.", url: "https://capcut.com", tag: "Video Editing", free: true },
+    { name: "Runway ML", emoji: "🎥", desc: "Generate and edit videos with AI. Remove backgrounds, change scenes, generate footage from text descriptions.", url: "https://runwayml.com", tag: "AI Generation", free: true },
+    { name: "Descript", emoji: "✂️", desc: "Edit video by editing text. It transcribes your video and you cut footage just by deleting words. Revolutionary.", url: "https://descript.com", tag: "Editing", free: true }
+  ]},
+  writing: { summary: "These AI writing tools produce high-quality content in seconds, from blog posts to emails.", tools: [
+    { name: "ChatGPT", emoji: "✍️", desc: "The best all-around writing assistant. Blog posts, emails, social media, scripts — anything you need written, fast.", url: "https://chat.openai.com", tag: "Writing", free: true },
+    { name: "Jasper AI", emoji: "🚀", desc: "Professional AI copywriter built for marketers. Templates for ads, blogs, emails and social media with brand voice training.", url: "https://jasper.ai", tag: "Copywriting", free: false },
+    { name: "Copy.ai", emoji: "📝", desc: "Generate marketing copy, blog posts, and social media content in seconds. Great free tier to get started.", url: "https://copy.ai", tag: "Content", free: true }
+  ]},
+  image: { summary: "These AI image generators create stunning visuals from simple text descriptions.", tools: [
+    { name: "Midjourney", emoji: "🎨", desc: "The gold standard for AI art. Creates breathtaking, highly detailed images from text prompts. Used by professionals worldwide.", url: "https://midjourney.com", tag: "Art Generation", free: false },
+    { name: "DALL-E 3", emoji: "🖼️", desc: "OpenAI's image generator built into ChatGPT. Excellent at following detailed instructions and creating realistic images.", url: "https://chat.openai.com", tag: "Image AI", free: true },
+    { name: "Adobe Firefly", emoji: "✨", desc: "Adobe's AI image generator. Commercially safe images with incredible quality. Integrates with Photoshop and Adobe tools.", url: "https://firefly.adobe.com", tag: "Design", free: true }
+  ]},
+  coding: { summary: "These AI coding tools will help you build apps and write code faster than ever before.", tools: [
+    { name: "GitHub Copilot", emoji: "💻", desc: "The most popular AI coding assistant. Autocompletes code, explains bugs, and suggests entire functions as you type.", url: "https://github.com/features/copilot", tag: "Coding", free: false },
+    { name: "Claude", emoji: "🤖", desc: "Exceptional at writing, explaining and debugging complex code. Handles large codebases and explains every decision clearly.", url: "https://claude.ai", tag: "AI Assistant", free: true },
+    { name: "Cursor", emoji: "⚡", desc: "An entire code editor powered by AI. Chat with your codebase, auto-fix bugs, and generate features from descriptions.", url: "https://cursor.sh", tag: "Code Editor", free: true }
+  ]},
+  studying: { summary: "These AI tools will supercharge your learning and help you study smarter, not harder.", tools: [
+    { name: "Notion AI", emoji: "📚", desc: "Summarize lecture notes, generate study guides, create flashcards, and organize everything in one place.", url: "https://notion.so", tag: "Notes & Study", free: true },
+    { name: "ChatGPT", emoji: "🎓", desc: "Your personal tutor available 24/7. Explains any concept, quizzes you on topics, simplifies complex subjects instantly.", url: "https://chat.openai.com", tag: "Tutoring", free: true },
+    { name: "Anki + AI", emoji: "🧠", desc: "Use AI to generate flashcard decks from your notes automatically, then use spaced repetition to memorize anything.", url: "https://apps.ankiweb.net", tag: "Memorization", free: true }
+  ]},
+  marketing: { summary: "These AI tools will handle your marketing and help grow your audience automatically.", tools: [
+    { name: "Buffer AI", emoji: "📱", desc: "AI-powered social media scheduling. Generates post ideas, writes captions, and posts at the best times automatically.", url: "https://buffer.com", tag: "Social Media", free: true },
+    { name: "Canva AI", emoji: "🎨", desc: "Design stunning social media posts, ads, and presentations with AI. Magic Resize, AI image generation included.", url: "https://canva.com", tag: "Design", free: true },
+    { name: "Jasper AI", emoji: "🚀", desc: "AI marketing copywriter. Generates ads, email campaigns, landing pages, and social content that converts.", url: "https://jasper.ai", tag: "Copywriting", free: false }
+  ]},
+  music: { summary: "These AI tools create, edit, and produce music without any musical experience needed.", tools: [
+    { name: "Suno AI", emoji: "🎵", desc: "Generate complete songs with vocals and instruments just by describing what you want. The most impressive AI music tool.", url: "https://suno.com", tag: "Music Generation", free: true },
+    { name: "Udio", emoji: "🎶", desc: "Create high-quality AI music from text prompts. Great for background music, content creation and experimentation.", url: "https://udio.com", tag: "Music AI", free: true },
+    { name: "Soundraw", emoji: "🎸", desc: "Generate royalty-free music for videos and content. Customize tempo, mood, and instruments with simple controls.", url: "https://soundraw.io", tag: "Royalty Free", free: true }
+  ]},
+  presentation: { summary: "These AI tools build beautiful presentations from your content automatically in seconds.", tools: [
+    { name: "Gamma AI", emoji: "📊", desc: "The best AI presentation maker. Describe your topic and it builds a complete, beautiful presentation in seconds.", url: "https://gamma.app", tag: "Presentations", free: true },
+    { name: "Beautiful.ai", emoji: "✨", desc: "Smart slides that automatically format and design themselves. Professional results without any design skills.", url: "https://beautiful.ai", tag: "Slides", free: false },
+    { name: "Tome", emoji: "📖", desc: "AI-native presentations and documents. Great for storytelling, pitch decks, and visual reports.", url: "https://tome.app", tag: "Storytelling", free: true }
+  ]},
+  resume: { summary: "These AI tools will write and optimize your resume to help you get hired faster.", tools: [
+    { name: "Kickresume", emoji: "📄", desc: "AI writes your entire resume from scratch. ATS-optimized templates and a cover letter generator included.", url: "https://kickresume.com", tag: "Resume Builder", free: true },
+    { name: "Teal", emoji: "🎯", desc: "Tracks your job applications and tailors your resume for each job automatically. Great for serious job seekers.", url: "https://tealhq.com", tag: "Job Search", free: true },
+    { name: "ChatGPT", emoji: "✍️", desc: "Paste your resume and a job description — ChatGPT rewrites your resume to match perfectly and writes cover letters.", url: "https://chat.openai.com", tag: "Writing", free: true }
+  ]},
+  translation: { summary: "These AI tools translate text and help you communicate naturally in any language.", tools: [
+    { name: "DeepL", emoji: "🌍", desc: "The most accurate AI translator available. Far better than Google Translate for nuanced, natural-sounding translations.", url: "https://deepl.com", tag: "Translation", free: true },
+    { name: "ChatGPT", emoji: "🗣️", desc: "Translates text while preserving tone and context. Also explains cultural nuances and helps with language learning.", url: "https://chat.openai.com", tag: "Language", free: true },
+    { name: "Whisper AI", emoji: "🎤", desc: "OpenAI's speech recognition. Transcribes and translates spoken audio in dozens of languages with high accuracy.", url: "https://openai.com/research/whisper", tag: "Speech", free: true }
+  ]},
+  chatbot: { summary: "These AI tools let you build chatbots and automate customer conversations without coding.", tools: [
+    { name: "Chatbase", emoji: "💬", desc: "Upload your documents and instantly create an AI chatbot for your website. No coding needed, setup in minutes.", url: "https://chatbase.co", tag: "Chatbots", free: true },
+    { name: "ManyChat", emoji: "🤖", desc: "Automate Instagram, WhatsApp, and Facebook conversations. Great for businesses wanting to scale customer support.", url: "https://manychat.com", tag: "Automation", free: true },
+    { name: "Tidio", emoji: "📬", desc: "AI live chat and chatbot for websites. Answers customer questions automatically and captures leads 24/7.", url: "https://tidio.com", tag: "Customer Support", free: true }
+  ]}
+};
 
-  // Auto-resize textarea
-  searchInput.addEventListener('input', function() {
-    this.style.height = 'auto';
-    this.style.height = Math.min(this.scrollHeight, 160) + 'px';
-  });
-
-  searchInput.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      findAI();
-    }
-  });
-
-  function setQuery(text) {
-    searchInput.value = text;
-    searchInput.style.height = 'auto';
-    searchInput.style.height = Math.min(searchInput.scrollHeight, 160) + 'px';
-    searchInput.focus();
-  }
-
-  async function findAI() {
-    const query = searchInput.value.trim();
-    if (!query) return;
-
-    const btn = document.getElementById('searchBtn');
-    const resultsArea = document.getElementById('resultsArea');
-
-    btn.disabled = true;
-    btn.textContent = 'Searching...';
-
-    resultsArea.innerHTML = `
-      <div class="results">
-        <div class="loading">
-          <div class="dots">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-          </div>
-          <span>Finding the best AI tools for you...</span>
-        </div>
-      </div>
-    `;
-
-    try {
-      const response = await fetch("https://api.anthropic.com/v1/messages", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model: "claude-sonnet-4-20250514",
-          max_tokens: 1000,
-          system: `You are AIFind, an expert AI tool recommender. When a user describes what they need, recommend the 3 best AI tools for their task.
-
-Respond ONLY with valid JSON in this exact format, no markdown, no backticks, no extra text:
-{
-  "summary": "One sentence about what you're recommending and why",
-  "tools": [
-    {
-      "name": "Tool Name",
-      "emoji": "relevant emoji",
-      "tagline": "What it does in under 10 words",
-      "description": "2-3 sentences explaining why this is perfect for the user's need",
-      "url": "https://actual-real-url.com",
-      "tag": "Category tag",
-      "free": true
-    }
-  ]
+function matchQuery(q) {
+q = q.toLowerCase();
+if (q.match(/excel|spreadsheet|formula|sheets|data|csv|google sheets/)) return DB.excel;
+if (q.match(/video|edit|film|footage|reel|tiktok|youtube|clip|record/)) return DB.video;
+if (q.match(/writ|blog|content|copy|article|post|essay|email|caption/)) return DB.writing;
+if (q.match(/image|photo|art|design|picture|illustration|graphic|logo/)) return DB.image;
+if (q.match(/code|program|app|software|develop|website|html|python|javascript|build/)) return DB.coding;
+if (q.match(/study|learn|school|university|exam|note|tutor|course|homework/)) return DB.studying;
+if (q.match(/market|social media|instagram|advertis|brand|campaign|grow/)) return DB.marketing;
+if (q.match(/music|song|audio|sound|beat|melody|track|podcast/)) return DB.music;
+if (q.match(/present|slide|pitch|deck|powerpoint|keynote/)) return DB.presentation;
+if (q.match(/resum|cv|job|hire|interview|career|linkedin/)) return DB.resume;
+if (q.match(/translat|language|arabic|french|english|spanish|german/)) return DB.translation;
+if (q.match(/chatbot|customer|support|automat|bot|chat|message/)) return DB.chatbot;
+return null;
 }
 
-Only recommend real, well-known AI tools with correct URLs. Be specific and helpful. The free field should be true if there's a meaningful free tier.`,
-          messages: [{ role: "user", content: `Find me the best AI tools for: ${query}` }]
-        })
-      });
+function getDefault() {
+return {
+summary: “Here are the most powerful and versatile AI tools that can help with almost any task you need.”,
+tools: [
+{ name: “ChatGPT”, emoji: “🤖”, desc: “The world’s most versatile AI. Writing, coding, research, analysis, math, brainstorming — handles almost any task.”, url: “https://chat.openai.com”, tag: “General AI”, free: true },
+{ name: “Claude”, emoji: “⚡”, desc: “Anthropic’s AI. Exceptional for complex reasoning, long documents, coding, and nuanced writing tasks.”, url: “https://claude.ai”, tag: “General AI”, free: true },
+{ name: “Perplexity AI”, emoji: “🔍”, desc: “AI-powered search engine that gives direct answers with cited sources. Perfect for research and current information.”, url: “https://perplexity.ai”, tag: “Research”, free: true }
+]
+};
+}
 
-      const data = await response.json();
-      const text = data.content?.map(i => i.text || "").join("") || "";
-      
-      let parsed;
-      try {
-        const clean = text.replace(/```json|```/g, "").trim();
-        parsed = JSON.parse(clean);
-      } catch(e) {
-        throw new Error("Could not parse response");
-      }
+const searchInput = document.getElementById(‘searchInput’);
+searchInput.addEventListener(‘input’, function() {
+this.style.height = ‘auto’;
+this.style.height = Math.min(this.scrollHeight, 160) + ‘px’;
+});
+searchInput.addEventListener(‘keydown’, function(e) {
+if (e.key === ‘Enter’ && !e.shiftKey) { e.preventDefault(); findAI(); }
+});
 
-      renderResults(parsed, query);
+function setQuery(text) {
+searchInput.value = text;
+searchInput.style.height = ‘auto’;
+searchInput.style.height = Math.min(searchInput.scrollHeight, 160) + ‘px’;
+searchInput.focus();
+}
 
-    } catch (err) {
-      resultsArea.innerHTML = `
-        <div class="results">
-          <div class="ai-response">
-            <p>Something went wrong. Please try again.</p>
-          </div>
-        </div>
-      `;
-    }
+function findAI() {
+const query = searchInput.value.trim();
+if (!query) return;
+const btn = document.getElementById(‘searchBtn’);
+const area = document.getElementById(‘resultsArea’);
+btn.disabled = true;
+btn.textContent = ‘Searching…’;
+area.innerHTML = `<div class="results"><div class="loading"><div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div><span>Finding the best AI tools for you...</span></div></div>`;
+setTimeout(() => {
+renderResults(matchQuery(query) || getDefault(), query);
+btn.disabled = false;
+btn.textContent = ‘Find AI →’;
+}, 900);
+}
 
-    btn.disabled = false;
-    btn.textContent = 'Find AI →';
-  }
-
-  function renderResults(data, query) {
-    const resultsArea = document.getElementById('resultsArea');
-
-    const cardsHTML = data.tools.map(tool => `
-      <a href="${tool.url}" target="_blank" rel="noopener" class="tool-card">
-        <div class="tool-card-icon">${tool.emoji}</div>
-        <div class="tool-card-name">${tool.name}</div>
-        <div class="tool-card-desc">${tool.description}</div>
-        <div style="display:flex; gap:8px; flex-wrap:wrap;">
-          <span class="tool-card-tag">${tool.tag}</span>
-          ${tool.free ? '<span class="tool-card-tag" style="background:rgba(94,248,159,0.1);color:#5ef89f;">Free tier</span>' : ''}
-        </div>
-      </a>
-    `).join('');
-
-    resultsArea.innerHTML = `
-      <div class="results">
-        <div class="results-label">Results for "${query}"</div>
-        <div class="ai-response" style="margin-bottom:20px;">
-          <p>${data.summary}</p>
-        </div>
-        <div class="tool-cards">${cardsHTML}</div>
-        <div style="margin-top:20px; text-align:center;">
-          <span style="font-size:0.8rem; color:var(--muted);">Click any tool to visit their website →</span>
-        </div>
-      </div>
-    `;
-  }
+function renderResults(data, query) {
+const area = document.getElementById(‘resultsArea’);
+const cards = data.tools.map(t => ` <a href="${t.url}" target="_blank" rel="noopener" class="tool-card"> <div class="tool-icon">${t.emoji}</div> <div class="tool-name">${t.name}</div> <div class="tool-desc">${t.desc}</div> <div class="tool-tags"> <span class="tag">${t.tag}</span> <span class="tag ${t.free ? 'free' : 'paid'}">${t.free ? 'Free tier' : 'Paid'}</span> </div> </a>`).join(’’);
+area.innerHTML = ` <div class="results"> <div class="results-label">Results for "${query}"</div> <div class="summary-box">${data.summary}</div> <div class="tool-cards">${cards}</div> <div style="margin-top:20px;text-align:center;"><span style="font-size:0.8rem;color:var(--muted);">Click any tool to visit their website →</span></div> </div>`;
+}
 </script>
+
 </body>
 </html>
