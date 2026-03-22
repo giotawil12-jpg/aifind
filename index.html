@@ -229,7 +229,7 @@ if (!query) return;
 const btn = document.getElementById(‘searchBtn’);
 const area = document.getElementById(‘resultsArea’);
 btn.disabled = true;
-btn.textContent = ‘Searching…’;
+btn.textContent = 'Searching...';
 area.innerHTML = `<div class="results"><div class="loading"><div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div><span>Finding the best AI tools for you...</span></div></div>`;
 setTimeout(() => {
 renderResults(matchQuery(query) || getDefault(), query);
